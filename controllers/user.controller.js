@@ -1,6 +1,6 @@
 import User from '../models/user.models.js'
 
-export default getUsers = async (req, res, nex) => {
+export const getUsers = async (req, res, nex) => {
     try {
         const users = await User.find();
 
@@ -10,7 +10,7 @@ export default getUsers = async (req, res, nex) => {
     }
 }
 
-export default getUser = async (req, res, nex) => {
+export const getUser = async (req, res, nex) => {
     try {
         const user = await User.findById(req.params.id).select('-password');
 
